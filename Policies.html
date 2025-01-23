@@ -83,14 +83,16 @@
         }
 
         .content-box {
-            padding: 1rem;
-            display: none;
-            overflow: hidden;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
+    padding: 1rem;
+    display: none;
+    overflow: auto; /* Allow scrolling for overflowed content */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    max-height: none; /* Ensure no height restriction */
+    white-space: normal; /* Prevent text from being truncated with ellipses */
+}
 
         .content-box p, .content-box ul, .content-box h3 {
             margin: 1rem 0;
@@ -212,13 +214,18 @@
     <script>
         const collapsibles = document.querySelectorAll('.collapsible');
 
-        collapsibles.forEach(button => {
-            button.addEventListener('click', () => {
-                button.classList.toggle('active');
-                const content = button.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
+collapsibles.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.toggle('active');
+        const content = button.nextElementSibling;
+        if (content.style.display === 'block') {
+            content.style.display = 'none';
+        } else {
+            content.style.display = 'block';
+        }
+    });
+});
+
     </script>
 </body>
 </html>
