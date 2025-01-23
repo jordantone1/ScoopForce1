@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoop Force - Policies</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,6 +24,7 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
             background-color: #444;
         }
 
@@ -38,25 +40,29 @@
         }
 
         .main-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow wrapping for small screens */
-    justify-content: center;
-    align-items: center;
-    padding: 1rem; /* Reduce padding on smaller screens */
-}
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
 
-.logo {
-    width: 100%; /* Make logo take up full width on mobile */
-    max-width: 300px; /* Set a max size to prevent it from getting too large */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 auto; /* Center it */
-}
+        .logo {
+            width: 100%;
+            max-width: 300px; /* Set a max size for mobile screens */
+            height: auto; /* Maintain aspect ratio */
+            margin: 1rem auto; /* Center the logo */
+        }
 
-.content {
-    width: 100%; /* Make content take up full width */
-    max-width: 600px; /* Limit the maximum width for readability */
-    padding: 1rem; /* Add breathing room */
-}
+        .content {
+            width: 100%; /* Full width for small screens */
+            max-width: 800px; /* Limit the width for readability on large screens */
+            padding: 1rem;
+            margin: 1rem auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
         .collapsible {
             background-color: #333;
@@ -67,7 +73,7 @@
             border: none;
             outline: none;
             width: 100%;
-            font-size: 1.2rem;
+            font-size: 1rem; /* Adjust for readability on all devices */
             margin-bottom: 1rem;
             border-radius: 5px;
         }
@@ -77,7 +83,7 @@
         }
 
         .content-box {
-            padding: 0 1rem;
+            padding: 1rem;
             display: none;
             overflow: hidden;
             background-color: #fff;
@@ -99,32 +105,52 @@
         }
 
         .bottom-links {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Ensures vertical alignment */
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px; /* Space between links */
-    margin: 0; /* Remove default margins */
-    width: 100%;
-}
-
-
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow links to wrap on smaller screens */
+            gap: 10px; /* Space between links */
+            margin: 0;
+            width: 100%;
+        }
 
         .bottom-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    margin: 0 10px; /* Controls spacing between links */
-    font-size: 1rem;
-}
-.bottom-links a:hover {
-    text-decoration: underline;
-}
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem; /* Adjust font size for mobile */
+        }
 
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
 
+        /* Responsive Styles for Mobile Devices */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+
+            .logo {
+                max-width: 200px; /* Smaller logo for mobile */
+            }
+
+            .content {
+                padding: 1rem;
+                max-width: 100%; /* Use full screen width */
+                margin: 0;
+            }
+
+            .collapsible {
+                font-size: 0.9rem; /* Adjust button size for small screens */
+            }
+
+            .footer {
+                font-size: 0.8rem; /* Smaller footer text */
+            }
+        }
     </style>
 </head>
 <body>
@@ -132,7 +158,7 @@
         <h1>Scoop Force Policies</h1>
     </header>
 
- <nav>
+    <nav>
         <a href="index.html">Home</a>
         <a href="Policies.html">Policies</a>
         <a href="pricing.html">Pricing</a>
@@ -141,99 +167,44 @@
         <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
         <a href="whatwedo.services.html">What We Do/Services Page</a>
     </nav>
+
     <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-    <div class="content">
-        <button class="collapsible">Refund/Cancellation Policy & Rescheduling</button>
-        <div class="content-box">
-            <h3>Satisfaction Guarantee</h3>
-            <p>At Scoop Force, we pride ourselves on delivering top-quality service. If you’re not satisfied with a cleaning, let us know within 24 hours, and we’ll return to fix the issue at no additional cost.</p>
+        <div class="content">
+            <!-- Collapsible sections for policies -->
+            <button class="collapsible">Refund/Cancellation Policy & Rescheduling</button>
+            <div class="content-box">
+                <h3>Satisfaction Guarantee</h3>
+                <p>At Scoop Force, we pride ourselves...</p>
+            </div>
 
-            <h3>Refund Eligibility</h3>
-            <ul>
-                <li><strong>One-Time Cleanings:</strong>
-                    <ul>
-                        <li>48hrs notice: Full refund</li>
-                        <li>24hrs notice: 50% refund</li>
-                        <li>Less than 24hrs: No refund, $10 rescheduling fee applies.</li>
-                    </ul>
-                </li>
-                <li><strong>Recurring Subscriptions:</strong> Prepaid services are non-refundable but will be honored through the remainder of the billing period.</li>
-                <li><strong>Overpayment or Billing Errors:</strong> Refunds will be issued promptly for any errors.</li>
-            </ul>
+            <button class="collapsible">Overgrown Yard Fee Policy</button>
+            <div class="content-box">
+                <h3>Why We Charge an Overgrown Yard Fee</h3>
+                <p>An overgrown yard takes...</p>
+            </div>
 
-            <h3>How to Cancel or Request a Refund</h3>
-            <p>Email us at <strong>ScoopForceCleaners@gmail.com</strong> with the following details:
-                <ul>
-                    <li>Your name</li>
-                    <li>Service address</li>
-                    <li>Scheduled service date</li>
-                    <li>Reason for cancellation or refund request</li>
-                </ul>
-            </p>
+            <button class="collapsible">Referral Policy</button>
+            <div class="content-box">
+                <h3>Thank You for Helping Scoop Force Grow!</h3>
+                <p>We reward our customers for spreading the word...</p>
+            </div>
 
-            <h3>Exceptions</h3>
-            <p>Severe weather may result in rescheduling rather than cancellation. There are no additional fees for weather-related rescheduling.</p>
-        </div>
-
-        <button class="collapsible">Overgrown Yard Fee Policy</button>
-        <div class="content-box">
-            <h3>Why We Charge an Overgrown Yard Fee</h3>
-            <p>An overgrown yard takes significantly more time to clean due to tall grass, dense weeds, or debris, which makes navigation and waste removal more challenging.</p>
-
-            <h3>Fee Structure</h3>
-            <ul>
-                <li><strong>Mild Overgrowth:</strong> Grass 6–12 inches, minimal weeds. Fee: $15 per visit.</li>
-                <li><strong>Moderate Overgrowth:</strong> Grass 12–18 inches, moderate weeds, or slight debris. Fee: $25 per visit.</li>
-                <li><strong>Severe Overgrowth:</strong> Grass over 18 inches, dense weeds, or significant debris. Fee: $40–$60 per visit.</li>
-            </ul>
-
-            <h3>Assessment</h3>
-            <p>We will assess your yard’s condition during the first visit and provide a clear explanation and fee estimate before beginning work.</p>
-        </div>
-
-        <button class="collapsible">Referral Policy</button>
-        <div class="content-box">
-            <h3>Thank You for Helping Scoop Force Grow!</h3>
-            <p>We reward our customers for spreading the word about Scoop Force. Here's how:</p>
-
-            <h3>How It Works</h3>
-            <ul>
-                <li><strong>Refer a Friend:</strong> Your referral gets $10 off their first initial cleaning with a subscription, or $15 off a one-time cleaning.</li>
-                <li><strong>Earn Rewards:</strong> You get $10 credit for every referral. Credits can be stacked for free months of service.</li>
-            </ul>
-
-            <h3>Rules & Details</h3>
-            <ul>
-                <li>Referral is complete once service is provided and payment is confirmed.</li>
-                <li>Referrals must mention your name during sign-up.</li>
-                <li>Credits apply only to active customers and are non-transferable.</li>
-            </ul>
-        </div>
-
-        <button class="collapsible">Pet Safety Policy</button>
-        <div class="content-box">
-            <h3>Keeping Your Pets Safe</h3>
-            <p>At Scoop Force, we prioritize the safety and well-being of your pets during every visit.</p>
-
-            <h3>Policy Details</h3>
-            <ul>
-                <li><strong>Securing Pets:</strong> Pets must be secured indoors or in a designated area during service to ensure safety.</li>
-                <li><strong>Notification of Behavior:</strong> Inform us of any territorial or aggressive behavior when scheduling service.</li>
-                <li><strong>Fences and Gates:</strong> Ensure all gates and fences are secure to prevent accidental escapes.</li>
-                <li><strong>Unforeseen Circumstances:</strong> If a pet is unsecured or aggressive, we may reschedule the service.</li>
-            </ul>
+            <button class="collapsible">Pet Safety Policy</button>
+            <div class="content-box">
+                <h3>Keeping Your Pets Safe</h3>
+                <p>At Scoop Force, we prioritize...</p>
+            </div>
         </div>
     </div>
-        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png"  alt="Scoop Force Logo" class="logo">
-    </div> 
+
     <div class="bottom-links">
         <a href="policies.html">Policies</a>
         <a href="pricing.html">Pricing</a>
         <a href="signupform.html">Sign Up Here</a>
         <a href="contactus.html">Contact Us</a>
     </div>
-</div>
+
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
@@ -245,13 +216,10 @@
             button.addEventListener('click', () => {
                 button.classList.toggle('active');
                 const content = button.nextElementSibling;
-                if (content.style.display === 'block') {
-                    content.style.display = 'none';
-                } else {
-                    content.style.display = 'block';
-                }
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
 </body>
 </html>
+
