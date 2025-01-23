@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoop Force - What We Do</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,36 +24,40 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
             background-color: #444;
         }
 
         nav a {
             color: #fff;
             text-decoration: none;
-            padding: 1rem;
-            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 0.9rem; /* Adjusted for smaller screens */
         }
 
         nav a:hover {
             background-color: #555;
         }
+
         .main-container {
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
             justify-content: center;
             align-items: flex-start;
-            padding: 2rem;
+            padding: 1rem;
         }
 
         .logo {
-            width: 600px;
+            width: 100%;
+            max-width: 300px; /* Scale logo for mobile */
             height: auto;
-            margin: 0 20px;
+            margin: 1rem auto;
         }
 
         .content {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
+            max-width: 900px; /* Limit width for larger screens */
+            padding: 1.5rem;
             background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -60,11 +65,12 @@
 
         h1, h2, h3 {
             color: #333;
+            text-align: center; /* Center headings */
         }
 
         ul {
             list-style-type: disc;
-            padding-left: 2rem;
+            padding-left: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
@@ -75,7 +81,7 @@
 
         .cta-links a {
             display: inline-block;
-            margin: 0 10px;
+            margin: 0.5rem 0.5rem;
             padding: 0.8rem 1.5rem;
             background-color: #333;
             color: #fff;
@@ -97,31 +103,43 @@
         }
 
         .bottom-links {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Ensures vertical alignment */
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px; /* Space between links */
-    margin: 0; /* Remove default margins */
-    width: 100%;
-}
-
-
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+            gap: 10px;
+        }
 
         .bottom-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    margin: 0 10px; /* Controls spacing between links */
-    font-size: 1rem;
-}
-.bottom-links a:hover {
-    text-decoration: underline;
-}
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem; /* Adjust font size for mobile */
+        }
 
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles for Mobile Devices */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 0.8rem; /* Adjust font size for nav links */
+            }
+
+            .content {
+                padding: 1rem; /* Reduce padding for smaller screens */
+            }
+
+            h1, h2, h3 {
+                font-size: 1.2rem; /* Adjust heading sizes */
+            }
+
+            .cta-links a {
+                font-size: 0.9rem; /* Adjust button size */
+            }
+        }
     </style>
 </head>
 <body>
@@ -136,61 +154,65 @@
         <a href="signupform.html">Sign Up Page</a>
         <a href="contactus.html">Contact Us</a>
         <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
-        <a href="whatwedo/services.html">What We Do/Services Page</a>
+        <a href="whatwedo.html">What We Do</a>
     </nav>
-<div class="main-container">
+
+    <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-    <div class="content">
-        <h2>At Scoop Force, We Make Your Yard a Cleaner Place</h2>
-        <p>We specialize in keeping your yard clean, fresh, and free from pet waste. Our professional pet waste removal services save you time, effort, and hassle, so you can enjoy your outdoor space without worry. We’re dedicated to providing top-quality service with a focus on convenience, reliability, and cleanliness.</p>
+        <div class="content">
+            <h2>At Scoop Force, We Make Your Yard a Cleaner Place</h2>
+            <p>We specialize in keeping your yard clean, fresh, and free from pet waste. Our professional pet waste removal services save you time, effort, and hassle, so you can enjoy your outdoor space without worry. We’re dedicated to providing top-quality service with a focus on convenience, reliability, and cleanliness.</p>
 
-        <h2>Our Services</h2>
-        <h3>1. Pet Waste Removal</h3>
-        <ul>
-            <li><strong>One-Time Cleanings:</strong> Perfect for when you’ve fallen behind or need a yard refresh before a special event. Ideal for those not needing regular cleanups.</li>
-            <li><strong>Recurring Services:</strong> Choose a schedule that works for you:
-                <ul>
-                    <li>Weekly cleanings</li>
-                    <li>Bi-weekly cleanings</li>
-                </ul>
-                <p>Sign up for recurring services (two or more months), and your first cleaning (quoted as a one-time cleaning) will be <strong>$30 off.</strong></p>
-            </li>
-        </ul>
+            <h2>Our Services</h2>
+            <h3>1. Pet Waste Removal</h3>
+            <ul>
+                <li><strong>One-Time Cleanings:</strong> Perfect for when you’ve fallen behind or need a yard refresh before a special event.</li>
+                <li><strong>Recurring Services:</strong> Choose a schedule that works for you:
+                    <ul>
+                        <li>Weekly cleanings</li>
+                        <li>Bi-weekly cleanings</li>
+                    </ul>
+                    <p>Sign up for recurring services and get <strong>$30 off your first cleaning.</strong></p>
+                </li>
+            </ul>
 
-        <h3>2. Additional Services</h3>
-        <ul>
-            <li><strong>Pet Waste Station Maintenance:</strong> Ideal for HOAs and community areas. We install and maintain pet waste stations. <em>(Contact us for details)</em></li>
-        </ul>
+            <h3>2. Additional Services</h3>
+            <ul>
+                <li><strong>Pet Waste Station Maintenance:</strong> Ideal for HOAs and community areas. <em>(Contact us for details)</em></li>
+            </ul>
 
-        <h3>3. Customer Perks</h3>
-        <ul>
-            <li><strong>Referral Discounts:</strong> Earn rewards for every new customer you refer. (<a href="policies.html">Click here for details</a>)</li>
-            <li><strong>Subscription Discounts:</strong> Commit to two or more months of recurring service and save on your first cleanup (<strong>$30 off</strong>).</li>
-        </ul>
+            <h3>3. Customer Perks</h3>
+            <ul>
+                <li><strong>Referral Discounts:</strong> Earn rewards for every new customer you refer. (<a href="policies.html">Click here for details</a>)</li>
+                <li><strong>Subscription Discounts:</strong> Commit to two or more months of recurring service and save <strong>$30</strong> on your first cleanup.</li>
+            </ul>
 
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li><strong>Convenience:</strong> We handle the dirty work so you don’t have to.</li>
-            <li><strong>Affordable Rates:</strong> Transparent pricing with no hidden fees.</li>
-            <li><strong>Professional Service:</strong> Our team is trained to provide thorough and respectful service every time.</li>
-            <li><strong>Eco-Friendly Practices:</strong> We use environmentally safe products and dispose of waste responsibly.</li>
-        </ul>
+            <h2>Why Choose Us?</h2>
+            <ul>
+                <li><strong>Convenience:</strong> We handle the dirty work so you don’t have to.</li>
+                <li><strong>Affordable Rates:</strong> Transparent pricing with no hidden fees.</li>
+                <li><strong>Professional Service:</strong> Our team is trained to provide thorough and respectful service every time.</li>
+                <li><strong>Eco-Friendly Practices:</strong> We use environmentally safe products and dispose of waste responsibly.</li>
+            </ul>
 
-        <div class="cta-links">
-            <a href="pricing.html">View Our Pricing Page</a>
-            <a href="policies.html">Read Our Policies</a>
+            <div class="cta-links">
+                <a href="pricing.html">View Our Pricing Page</a>
+                <a href="policies.html">Read Our Policies</a>
+            </div>
         </div>
     </div>
- <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-    </div> 
+
     <div class="bottom-links">
         <a href="policies.html">Policies</a>
         <a href="pricing.html">Pricing</a>
         <a href="signupform.html">Sign Up Here</a>
         <a href="contactus.html">Contact Us</a>
     </div>
+
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
 </body>
 </html>
+
+ 
