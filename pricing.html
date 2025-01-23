@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoop Force - Pricing</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,6 +24,7 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
             background-color: #444;
         }
 
@@ -39,27 +41,30 @@
 
         .main-container {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+            justify-content: center;
             align-items: flex-start;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
         .logo {
-            width: 600px; /* Adjusted for better layout */
+            width: 100%;
+            max-width: 300px; /* Scale logos for mobile */
             height: auto;
-            margin: 0 20px;
+            margin: 1rem auto; /* Center logos */
         }
 
         .pricing {
-            flex: 1;
-            max-width: 600px;
-            background-color: #fff;
             padding: 1.5rem;
+            width: 100%; /* Full width for mobile */
+            max-width: 600px; /* Limit width for larger screens */
+            margin: 1rem auto;
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        h1, h2 {
+        h1, h2, h3 {
             text-align: center;
         }
 
@@ -83,16 +88,16 @@
         .overgrown-container {
             position: relative;
             width: 100%;
-            max-width: 600px;
-            height: 400px;
+            max-width: 300px; /* Scale for mobile */
+            height: auto;
             overflow: hidden;
+            margin: 0 auto;
         }
 
         .overgrown-container img {
-            position: absolute;
             display: none;
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -125,17 +130,32 @@
             text-align: center;
             padding: 1rem 0;
             background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
+            gap: 10px;
         }
 
         .bottom-links a {
             color: #333;
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Adjust font size for mobile */
         }
 
         .bottom-links a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive Styles for Mobile Devices */
+        @media (max-width: 768px) {
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+
+            .footer {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -155,10 +175,8 @@
     </header>
 
     <div class="main-container">
-        <!-- First Logo -->
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
 
-        <!-- Pricing Section -->
         <div class="pricing">
             <h2>Scoop Force Pricing</h2>
             <ul>
@@ -173,17 +191,12 @@
                 <li><strong>Overgrown Yard Fee (Severe):</strong> $40.00-$60.00</li>
             </ul>
             <h3>**Payment Policy**</h3>
-            <p>Payment is required at the time of booking for one-time cleanings or at the start of a subscription period.
-            We accept the following payment methods: Zelle, CashApp, and Venmo.
-            For recurring subscriptions, payments must be made at the start of each billing cycle.
-            Failed payments must be resolved within 7 days to avoid service interruption.</p>
+            <p>Payment is required at the time of booking for one-time cleanings or at the start of a subscription period. We accept the following payment methods: Zelle, CashApp, and Venmo. Failed payments must be resolved within 7 days to avoid service interruption.</p>
         </div>
 
-        <!-- Second Logo -->
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
     </div>
 
-    <!-- Overgrown Section -->
     <div class="overgrown-section">
         <h2>Overgrown Yard Examples</h2>
         <div class="overgrown-container">
@@ -196,7 +209,6 @@
         <div class="overgrown-description">Severely Overgrown</div>
     </div>
 
-    <!-- Bottom Links -->
     <div class="bottom-links">
         <a href="policies.html">Policies</a>
         <a href="pricing.html">Pricing</a>
@@ -204,7 +216,6 @@
         <a href="contactus.html">Contact Us</a>
     </div>
 
-    <!-- Footer -->
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
@@ -226,5 +237,3 @@
     </script>
 </body>
 </html>
-
-
