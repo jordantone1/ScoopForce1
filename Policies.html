@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+         <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -90,14 +90,10 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             margin-bottom: 1rem;
-            transition: max-height 0.3s ease; /* Smooth height transition */
-            max-height: 0; /* Initially collapsed */
         }
 
         .content-box.expanded {
-            display: block; /* Ensure it's visible */
-            max-height: 1000px; /* Arbitrary large height to fit expanded content */
-            overflow: visible; /* Allow full content visibility */
+            display: block;
         }
 
         .content-box p, .content-box ul, .content-box h3 {
@@ -222,15 +218,11 @@
 
         collapsibles.forEach(button => {
             button.addEventListener('click', () => {
-                button.classList.toggle('active');
                 const content = button.nextElementSibling;
-
-                if (content.classList.contains('expanded')) {
-                    content.classList.remove('expanded');
-                    content.style.maxHeight = null; // Collapse the content
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
                 } else {
-                    content.classList.add('expanded');
-                    content.style.maxHeight = `${content.scrollHeight}px`; // Expand to fit content
+                    content.style.display = 'block';
                 }
             });
         });
