@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoop Force - Sign Up</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F9FA;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+        }
+
+        .logo {
+            width: 600px;
+            height: auto;
+            margin: 0 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        form h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .file-upload {
+            border: none;
+            padding: 0;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+      
+
+        .bottom-links {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Remove default margins */
+    width: 100%;
+}
+
+
+
+        .bottom-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px; /* Controls spacing between links */
+    font-size: 1rem;
+}
+.bottom-links a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sign Up for Scoop Force Services</h1>
+    </header>
+ <nav>
+        <a href="Home.html">Home</a>
+        <a href="policies.html">Policies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signupform.html">Sign Up Page</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
+        <a href="whatwedo.services.html">What We Do/Services Page</a>
+    </nav>
+    <div class="main-container">
+        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+
+    <form action="mailto:scoopforcecleaners@gmail.com" method="post" enctype="text/plain">
+        <h1>Welcome to the Scoop Force Family!</h1>
+        <p>Fill out the form below or send an email request with the information to the below to schedule your pet waste removal service.</p>
+        <p><strong>Email:</strong> <a href="mailto:scoopforcecleaners@gmail.com">scoopforcecleaners@gmail.com</a></p>
+        
+        <!-- Contact Information -->
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="Full Name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="Email Address" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="Phone Number" required>
+
+        <label for="contact-preference">Preference (Email or Phone Call):</label>
+        <input type="text" id="contact-preference" name="Contact Preference" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="Address" required>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="City" required>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="State" required>
+
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" name="ZIP Code" required>
+
+        <!-- Service Options -->
+        <label for="service-type">Service Type:</label>
+        <select id="service-type" name="Service Type">
+            <option value="One Time">One Time</option>
+            <option value="Recurring 1 Week">Recurring 1 Week</option>
+            <option value="Recurring 2 Weeks">Recurring 2 Weeks</option>
+        </select>
+
+        <label for="yard-condition">Yard Condition:</label>
+        <select id="yard-condition" name="Yard Condition">
+            <option value="Good Condition">Good Condition</option>
+            <option value="Mildly Overgrown">Mildly Overgrown</option>
+            <option value="Moderately Overgrown">Moderately Overgrown</option>
+            <option value="Severely Overgrown">Severely Overgrown</option>
+        </select>
+
+        <label for="pictures">Add Up to 3 Pictures of Your Yard:</label>
+        <input type="file" id="pictures" name="Yard Pictures" class="file-upload" multiple accept="image/*">
+
+        <label for="number-of-dogs">Number of Dogs:</label>
+        <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
+        
+<!-- Dog Weights Section -->
+<label>Weight of Each Dog (up to 6):</label>
+<table>
+    <tr>
+        <th>Dog #</th>
+        <th>Weight (lbs)</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><input type="number" name="Dog Weight 1" min="1" max="200" placeholder="e.g., 25" required></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><input type="number" name="Dog Weight 2" min="1" max="200" placeholder="e.g., 30"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><input type="number" name="Dog Weight 3" min="1" max="200" placeholder="e.g., 15"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><input type="number" name="Dog Weight 4" min="1" max="200" placeholder="e.g., 40"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><input type="number" name="Dog Weight 5" min="1" max="200" placeholder="e.g., 50"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><input type="number" name="Dog Weight 6" min="1" max="200" placeholder="e.g., 20"></td>
+    </tr>
+</table>
+        <!-- Preferred Service Start Date  -->
+        <label for="service-date">Preferred Service Start Date *Note - Only Saturdays and Sundays are currently available. 10AM-6PM availability.*:</label>
+<input type="datetime-local" id="service-date" name="Preferred Service Start Date" required>
+<script>
+    const serviceDateInput = document.getElementById('service-date');
+
+    serviceDateInput.addEventListener('input', (event) => {
+        const selectedDate = new Date(serviceDateInput.value);
+        const dayOfWeek = selectedDate.getUTCDay();
+        const hour = selectedDate.getUTCHours();
+
+        // Check if it's not Saturday (6) or Sunday (0) or outside allowed time
+        if (
+            (dayOfWeek !== 0 && dayOfWeek !== 6) || // Not Sat/Sun
+            hour < 10 || hour >= 18               // Outside 10AM-6PM
+        ) {
+            alert('Please select a valid date and time (Saturday/Sunday, 10 AM–6 PM).');
+            serviceDateInput.value = ''; // Clear invalid input
+        }
+});
+</script>
+        <!-- Referral Program -->
+        <label for="referral">Were You Referred By Someone? If yes, please list them below.</label>
+        <input type="text" id="referral" name="Referral Name">
+
+        <label for="referral-address">Referral's Address (if known):</label>
+        <input type="text" id="referral-address" name="Referral Address">
+
+        <!-- Payment Info -->
+        <label for="payment-method">Preferred Payment Method:</label>
+        <select id="payment-method" name="Payment Method">
+            <option value="Zelle">Zelle</option>
+            <option value="Cashapp">Cashapp</option>
+            <option value="Stripe">Stripe</option>
+            <option value="Venmo">Venmo</option>
+        </select>
+
+        <div class="button-container">
+            <button type="submit">Submit Form</button>
+        </div>
+    </form>
+<img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+    </div> 
+    <div class="bottom-links">
+        <a href="policies.html">Policies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signupform.html">Sign Up Here</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
+    </div>
+    </div>
+</body>
+</html>
