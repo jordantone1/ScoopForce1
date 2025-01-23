@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoop Force - Refund/Cancellation Form</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -23,6 +24,7 @@
         nav {
             display: flex;
             justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
             background-color: #444;
         }
 
@@ -39,27 +41,32 @@
 
         .main-container {
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
             justify-content: center;
             align-items: flex-start;
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
 
         .logo {
-            width: 600px;
+            width: 100%;
+            max-width: 300px; /* Scale logo for mobile screens */
             height: auto;
-            margin: 0 20px;
+            margin: 1rem auto; /* Center the logo */
         }
+
         .form-container {
-            width: 60%;
+            width: 100%; /* Full width for mobile */
+            max-width: 800px; /* Limit width for larger screens */
             background-color: #fff;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
 
         .form-container h2 {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         form {
@@ -95,8 +102,9 @@
         }
 
         .sidebar {
-            width: 35%;
-            margin-left: 2rem;
+            width: 100%; /* Full width for small screens */
+            max-width: 300px; /* Limit width for larger screens */
+            margin: 1rem auto;
             background-color: #fff;
             padding: 1.5rem;
             border-radius: 8px;
@@ -106,7 +114,8 @@
         .sidebar img {
             display: block;
             margin: 0 auto 1rem;
-            width: 200px;
+            width: 100%;
+            max-width: 200px; /* Scale image for mobile */
         }
 
         .sidebar h3 {
@@ -123,31 +132,51 @@
         }
 
         .bottom-links {
-    text-align: center;
-    padding: 1rem 0;
-    background-color: #f1f1f1;
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Ensures vertical alignment */
-    flex-wrap: wrap; /* Allows wrapping for smaller screens */
-    gap: 20px; /* Space between links */
-    margin: 0; /* Remove default margins */
-    width: 100%;
-}
-
-
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
+            gap: 10px; /* Space between links */
+            margin: 0;
+            width: 100%;
+        }
 
         .bottom-links a {
-    display: inline-block;
-    text-decoration: none;
-    color: #333;
-    margin: 0 10px; /* Controls spacing between links */
-    font-size: 1rem;
-}
-.bottom-links a:hover {
-    text-decoration: underline;
-}
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem; /* Adjust font size for mobile */
+        }
 
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles for Mobile Devices */
+        @media (max-width: 768px) {
+            .main-container {
+                flex-direction: column; /* Stack elements vertically */
+            }
+
+            .form-container {
+                width: 100%;
+                padding: 1rem; /* Adjust padding for smaller screens */
+            }
+
+            .sidebar {
+                margin-top: 0;
+            }
+
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem; /* Smaller font size for mobile */
+            }
+
+            .footer {
+                font-size: 0.8rem; /* Smaller footer text */
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,7 +195,8 @@
     </nav>
 
     <div class="main-container">
- <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+
         <div class="form-container">
             <h2>Submit a Refund or Cancellation Request</h2>
             <form action="mailto:scoopforcecleaners@gmail.com" method="post" enctype="text/plain">
@@ -200,13 +230,15 @@
             </ul>
             <p><strong>Recurring Subscriptions:</strong> Services will continue until the end of the prepaid month. No refunds for partially used months.</p>
         </div>
-    </div> 
+    </div>
+
     <div class="bottom-links">
         <a href="policies.html">Policies</a>
         <a href="pricing.html">Pricing</a>
         <a href="signupform.html">Sign Up Here</a>
         <a href="contactus.html">Contact Us</a>
     </div>
+
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
