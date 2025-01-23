@@ -83,16 +83,22 @@
         }
 
         .content-box {
-    padding: 1rem;
-    display: none;
-    overflow: auto; /* Allow scrolling for overflowed content */
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    max-height: none; /* Ensure no height restriction */
-    white-space: normal; /* Prevent text from being truncated with ellipses */
-}
+            padding: 1rem;
+            display: none;
+            overflow: hidden;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            transition: max-height 0.3s ease; /* Smooth height transition */
+            max-height: 0; /* Initially collapsed */
+        }
+
+        .content-box.expanded {
+            display: block; /* Ensure it's visible */
+            max-height: 1000px; /* Arbitrary large height to fit expanded content */
+            overflow: visible; /* Allow full content visibility */
+        }
 
         .content-box p, .content-box ul, .content-box h3 {
             margin: 1rem 0;
@@ -177,25 +183,25 @@
             <button class="collapsible">Refund/Cancellation Policy & Rescheduling</button>
             <div class="content-box">
                 <h3>Satisfaction Guarantee</h3>
-                <p>At Scoop Force, we pride ourselves...</p>
+                <p>At Scoop Force, we pride ourselves on delivering top-quality service. If you’re not satisfied with a cleaning, let us know within 24 hours, and we’ll return to fix the issue at no additional cost.</p>
             </div>
 
             <button class="collapsible">Overgrown Yard Fee Policy</button>
             <div class="content-box">
                 <h3>Why We Charge an Overgrown Yard Fee</h3>
-                <p>An overgrown yard takes...</p>
+                <p>An overgrown yard takes significantly more time to clean due to tall grass, dense weeds, or debris, which makes navigation and waste removal more challenging.</p>
             </div>
 
             <button class="collapsible">Referral Policy</button>
             <div class="content-box">
                 <h3>Thank You for Helping Scoop Force Grow!</h3>
-                <p>We reward our customers for spreading the word...</p>
+                <p>We reward our customers for spreading the word about Scoop Force. Here's how:</p>
             </div>
 
             <button class="collapsible">Pet Safety Policy</button>
             <div class="content-box">
                 <h3>Keeping Your Pets Safe</h3>
-                <p>At Scoop Force, we prioritize...</p>
+                <p>At Scoop Force, we prioritize the safety and well-being of your pets during every visit.</p>
             </div>
         </div>
     </div>
@@ -214,19 +220,20 @@
     <script>
         const collapsibles = document.querySelectorAll('.collapsible');
 
-collapsibles.forEach(button => {
-    button.addEventListener('click', () => {
-        button.classList.toggle('active');
-        const content = button.nextElementSibling;
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-        } else {
-            content.style.display = 'block';
-        }
-    });
-});
+        collapsibles.forEach(button => {
+            button.addEventListener('click', () => {
+                button.classList.toggle('active');
+                const content = button.nextElementSibling;
 
+                if (content.classList.contains('expanded')) {
+                    content.classList.remove('expanded');
+                    content.style.maxHeight = null; // Collapse the content
+                } else {
+                    content.classList.add('expanded');
+                    content.style.maxHeight = `${content.scrollHeight}px`; // Expand to fit content
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
