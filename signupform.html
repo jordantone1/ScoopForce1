@@ -260,24 +260,7 @@
         <!-- Preferred Service Start Date  -->
         <label for="service-date">Preferred Service Start Date *Note - Only Saturdays and Sundays are currently available. 10AM-6PM availability.* :</label>
 <input type="text" id="service-date" name="Preferred Service Start Date" required>
-<script>
-    const serviceDateInput = document.getElementById('service-date');
 
-    serviceDateInput.addEventListener('input', (event) => {
-        const selectedDate = new Date(serviceDateInput.value);
-        const dayOfWeek = selectedDate.getUTCDay();
-        const hour = selectedDate.getUTCHours();
-
-        // Check if it's not Saturday (6) or Sunday (0) or outside allowed time
-        if (
-            (dayOfWeek !== 0 && dayOfWeek !== 6) || // Not Sat/Sun
-            hour < 10 || hour >= 18               // Outside 10AM-6PM
-        ) {
-            alert('Please select a valid date and time (Saturday/Sunday, 10 AM–6 PM).');
-            serviceDateInput.value = ''; // Clear invalid input
-        }
-});
-</script>
         <!-- Referral Program -->
         <label for="referral">Were You Referred By Someone? If yes, please list them below.</label>
         <input type="text" id="referral" name="Referral Name">
