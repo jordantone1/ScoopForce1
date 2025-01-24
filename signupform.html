@@ -179,37 +179,123 @@
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
             
             <!-- Contact Information -->
-            <label for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="Full Name" required>
+        <label for="full-name">Full Name:</label>
+        <input type="text" id="full-name" name="Full Name" required>
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="Email Address" required>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="Email Address" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="Phone Number" required>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="Phone Number" required>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="Address" required>
+        <label for="contact-preference">Preference (Email or Phone Call):</label>
+        <input type="text" id="contact-preference" name="Contact Preference" required>
 
-            <label for="service-type">Service Type:</label>
-            <select id="service-type" name="Service Type" required>
-                <option value="One Time">One Time</option>
-                <option value="Recurring Weekly">Recurring Weekly</option>
-                <option value="Recurring Bi-Weekly">Recurring Bi-Weekly</option>
-            </select>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="Address" required>
 
-            <label for="preferred-date">Preferred Start Date:</label>
-            <input type="datetime-local" id="preferred-date" name="Preferred Start Date" required>
+        <label for="city">City:</label>
+        <input type="text" id="city" name="City" required>
 
-            <label for="payment-method">Preferred Payment Method:</label>
-            <select id="payment-method" name="Payment Method" required>
-                <option value="Zelle">Zelle</option>
-                <option value="CashApp">CashApp</option>
-                <option value="Venmo">Venmo</option>
-            </select>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="State" required>
 
-            <div class="button-container">
-                <button type="submit">Submit Form</button>
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" name="ZIP Code" required>
+
+        <!-- Service Options -->
+        <label for="service-type">Service Type:</label>
+        <select id="service-type" name="Service Type">
+            <option value="One Time">One Time</option>
+            <option value="Recurring 1 Week">Recurring 1 Week</option>
+            <option value="Recurring 2 Weeks">Recurring 2 Weeks</option>
+        </select>
+
+        <label for="yard-condition">Yard Condition:</label>
+        <select id="yard-condition" name="Yard Condition">
+            <option value="Good Condition">Good Condition</option>
+            <option value="Mildly Overgrown">Mildly Overgrown</option>
+            <option value="Moderately Overgrown">Moderately Overgrown</option>
+            <option value="Severely Overgrown">Severely Overgrown</option>
+        </select>
+
+        <label for="pictures">Add Up to 3 Pictures of Your Yard:</label>
+        <input type="file" id="pictures" name="Yard Pictures" class="file-upload" multiple accept="image/*">
+
+        <label for="number-of-dogs">Number of Dogs:</label>
+        <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
+        
+<!-- Dog Weights Section -->
+<label>Weight of Each Dog (up to 6):</label>
+<table>
+    <tr>
+        <th>Dog #</th>
+        <th>Weight (lbs)</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><input type="number" name="Dog Weight 1" min="1" max="200" placeholder="e.g., 25" required></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><input type="number" name="Dog Weight 2" min="1" max="200" placeholder="e.g., 30"></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><input type="number" name="Dog Weight 3" min="1" max="200" placeholder="e.g., 15"></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><input type="number" name="Dog Weight 4" min="1" max="200" placeholder="e.g., 40"></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><input type="number" name="Dog Weight 5" min="1" max="200" placeholder="e.g., 50"></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><input type="number" name="Dog Weight 6" min="1" max="200" placeholder="e.g., 20"></td>
+    </tr>
+</table>
+        <!-- Preferred Service Start Date  -->
+        <label for="service-date">Preferred Service Start Date *Note - Only Saturdays and Sundays are currently available. 10AM-6PM availability.*:</label>
+<input type="datetime-local" id="service-date" name="Preferred Service Start Date" required>
+<script>
+    const serviceDateInput = document.getElementById('service-date');
+
+    serviceDateInput.addEventListener('input', (event) => {
+        const selectedDate = new Date(serviceDateInput.value);
+        const dayOfWeek = selectedDate.getUTCDay();
+        const hour = selectedDate.getUTCHours();
+
+        // Check if it's not Saturday (6) or Sunday (0) or outside allowed time
+        if (
+            (dayOfWeek !== 0 && dayOfWeek !== 6) || // Not Sat/Sun
+            hour < 10 || hour >= 18               // Outside 10AM-6PM
+        ) {
+            alert('Please select a valid date and time (Saturday/Sunday, 10 AM–6 PM).');
+            serviceDateInput.value = ''; // Clear invalid input
+        }
+});
+</script>
+        <!-- Referral Program -->
+        <label for="referral">Were You Referred By Someone? If yes, please list them below.</label>
+        <input type="text" id="referral" name="Referral Name">
+
+        <label for="referral-address">Referral's Address (if known):</label>
+        <input type="text" id="referral-address" name="Referral Address">
+
+        <!-- Payment Info -->
+        <label for="payment-method">Preferred Payment Method:</label>
+        <select id="payment-method" name="Payment Method">
+            <option value="Zelle">Zelle</option>
+            <option value="Cashapp">Cashapp</option>
+            <option value="Stripe">Stripe</option>
+            <option value="Venmo">Venmo</option>
+        </select>
+
+        <div class="button-container">
+            <button type="submit">Submit Form</button>
             </div>
         </form>
 
