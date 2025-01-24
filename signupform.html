@@ -227,9 +227,11 @@
           const input = document.getElementById('pictures');
           const preview = document.getElementById('preview');
 
-          input.addEventListener('change', () => {
+        input.addEventListener('change', () => {
           preview.innerHTML = ''; // Clear previous previews
-          Array.from(input.files).forEach(file => {
+          const files = Array.from(input.files); // Get all selected files
+          files.forEach((file, index) => {
+           if (index < 3) { // Limit to 3 images
            const reader = new FileReader();
            reader.onload = (e) => {
            const img = document.createElement('img');
@@ -238,7 +240,10 @@
            img.style.margin = '5px';
            preview.appendChild(img);
       };
-      reader.readAsDataURL(file);
+       reader.readAsDataURL(file);
+      } else {
+        alert('You can only upload up to 3 pictures.');
+      }
     });
   });
 </script>
