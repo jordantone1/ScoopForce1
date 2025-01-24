@@ -174,7 +174,7 @@
     <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
 
-        <form action="mailto:scoopforcecleaners@gmail.com" method="post" enctype="text/plain">
+        <form onsubmit="return sendEmail()"> 
             <h1>Welcome to the Scoop Force Family!</h1>
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
             
@@ -295,5 +295,55 @@
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
+    <script>
+    function sendEmail() {
+        const fullName = document.getElementById("full-name").value;
+        const email = document.getElementById("email").value;
+        const phone = document.getElementById("phone").value;
+        const contactPreference = document.getElementById("contact-preference").value;
+        const address = document.getElementById("address").value;
+        const city = document.getElementById("city").value;
+        const state = document.getElementById("state").value;
+        const zip = document.getElementById("zip").value;
+        const serviceType = document.getElementById("service-type").value;
+        const yardCondition = document.getElementById("yard-condition").value;
+        const numberOfDogs = document.getElementById("number-of-dogs").value;
+        const weights = [
+            document.querySelector('input[name="Dog Weight 1"]').value || "N/A",
+            document.querySelector('input[name="Dog Weight 2"]').value || "N/A",
+            document.querySelector('input[name="Dog Weight 3"]').value || "N/A",
+            document.querySelector('input[name="Dog Weight 4"]').value || "N/A",
+            document.querySelector('input[name="Dog Weight 5"]').value || "N/A",
+            document.querySelector('input[name="Dog Weight 6"]').value || "N/A",
+        ];
+        const serviceDate = document.getElementById("service-date").value;
+        const referralName = document.getElementById("referral").value || "N/A";
+        const referralAddress = document.getElementById("referral-address").value || "N/A";
+        const paymentMethod = document.getElementById("payment-method").value;
+
+        // Create the email subject and body
+        const subject = "New Sign-Up Request";
+        const body = `
+            Full Name: ${fullName}
+            Email: ${email}
+            Phone: ${phone}
+            Contact Preference: ${contactPreference}
+            Address: ${address}, ${city}, ${state}, ${zip}
+            Service Type: ${serviceType}
+            Yard Condition: ${yardCondition}
+            Number of Dogs: ${numberOfDogs}
+            Dog Weights: ${weights.join(", ")}
+            Preferred Service Start Date: ${serviceDate}
+            Referral Name: ${referralName}
+            Referral Address: ${referralAddress}
+            Preferred Payment Method: ${paymentMethod}
+        `;
+
+        // Open the default email client with the prefilled information
+        window.location.href = `mailto:scoopforcecleaners@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        return false; // Prevent default form submission
+    }
+</script>
+
 </body>
 </html>
