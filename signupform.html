@@ -221,7 +221,27 @@
 
         <label for="pictures">Add Up to 3 Pictures of Your Yard:</label>
         <input type="file" id="pictures" name="Yard Pictures[]" class="file-upload" multiple accept="image/*">
+        <div id="preview"></div>
+            
+        <script>
+          const input = document.getElementById('pictures');
+          const preview = document.getElementById('preview');
 
+          input.addEventListener('change', () => {
+          preview.innerHTML = ''; // Clear previous previews
+          Array.from(input.files).forEach(file => {
+           const reader = new FileReader();
+           reader.onload = (e) => {
+           const img = document.createElement('img');
+           img.src = e.target.result;
+           img.style.maxWidth = '100px';
+           img.style.margin = '5px';
+           preview.appendChild(img);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+</script>
         <label for="number-of-dogs">Number of Dogs:</label>
         <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
         
