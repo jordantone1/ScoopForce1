@@ -174,7 +174,7 @@
     <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
 
-        <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbzDxBEUUolINjgzfwwvhi4lFys4m4uBGohoCFgKVG73aOnUCYIshpgfZXv1gJVTAf8o7w/exec"> 
+        <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbxZOQuaiuGxuScCfUhOEBaGyvt4fcNM2wYedDyHTdm_7bymrOB9NlfNmg5J2mbNBsTU9A/exec"> 
             <h1>Welcome to the Scoop Force Family! <strong style="color: red;">***PLEASE PRESS SUBMIT AND WAIT 5 SECONDS FOR CONFIRMATION WINDOW BEFORE PRESSING SUBMIT AGAIN WHEN FILLED OUT/DONE.***</strong></h1>
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
             
@@ -219,92 +219,6 @@
             <option value="Severely Overgrown">Severely Overgrown</option>
         </select>
 
-        <label for="picture1">Add Picture 1 of Your Yard:</label>
-        <input type="file" id="picture1" name="Yard Picture 1" class="file-upload" accept="image/*">
-        <div id="preview"></div>
-            
-        <script>
-          const input = document.getElementById('picture1');
-          const preview = document.getElementById('preview');
-
-        input.addEventListener('change', () => {
-          preview.innerHTML = ''; // Clear previous previews
-          const files = Array.from(input.files); // Get all selected files
-          files.forEach((file, index) => {
-           if (index < 1) { // Limit to 1 images
-           const reader = new FileReader();
-           reader.onload = (e) => {
-           const img = document.createElement('img');
-           img.src = e.target.result;
-           img.style.maxWidth = '100px';
-           img.style.margin = '5px';
-           preview.appendChild(img);
-      };
-       reader.readAsDataURL(file);
-      } else {
-        alert('You can only upload up to 3 pictures.');
-      }
-    });
-  });
-</script>
-
-        <label for="picture2">Add Picture 2 of Your Yard:</label>
-        <input type="file" id="picture2" name="Yard Pictures 2" class="file-upload" accept="image/*">
-        <div id="preview"></div>
-            
-        <script>
-          const input = document.getElementById('picture2');
-          const preview = document.getElementById('preview');
-
-        input.addEventListener('change', () => {
-          preview.innerHTML = ''; // Clear previous previews
-          const files = Array.from(input.files); // Get all selected files
-          files.forEach((file, index) => {
-           if (index < 1) { // Limit to 1 images
-           const reader = new FileReader();
-           reader.onload = (e) => {
-           const img = document.createElement('img');
-           img.src = e.target.result;
-           img.style.maxWidth = '100px';
-           img.style.margin = '5px';
-           preview.appendChild(img);
-      };
-       reader.readAsDataURL(file);
-      } else {
-        alert('You can only upload up to 3 pictures.');
-      }
-    });
-  });
-</script>
-
-        <label for="picture3">Add Picture 3 of Your Yard:</label>
-        <input type="file" id="picture" name="Yard Pictures 3" class="file-upload" accept="image/*">
-        <div id="preview"></div>
-            
-        <script>
-          const input = document.getElementById('picture3');
-          const preview = document.getElementById('preview');
-
-        input.addEventListener('change', () => {
-          preview.innerHTML = ''; // Clear previous previews
-          const files = Array.from(input.files); // Get all selected files
-          files.forEach((file, index) => {
-           if (index < 1) { // Limit to 1 images
-           const reader = new FileReader();
-           reader.onload = (e) => {
-           const img = document.createElement('img');
-           img.src = e.target.result;
-           img.style.maxWidth = '100px';
-           img.style.margin = '5px';
-           preview.appendChild(img);
-      };
-       reader.readAsDataURL(file);
-      } else {
-        alert('You can only upload up to 3 pictures.');
-      }
-    });
-  });
-</script>
         <label for="number-of-dogs">Number of Dogs:</label>
         <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
         
@@ -375,7 +289,7 @@
         <a href="contactus.html">Contact Us</a>
     </div>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzDxBEUUolINjgzfwwvhi4lFys4m4uBGohoCFgKVG73aOnUCYIshpgfZXv1gJVTAf8o7w/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxZOQuaiuGxuScCfUhOEBaGyvt4fcNM2wYedDyHTdm_7bymrOB9NlfNmg5J2mbNBsTU9A/exec';
         const form = document.getElementById('signup-form');
         const submitButton = form.querySelector('button[type="submit"]'); // Reference the submit button
         
