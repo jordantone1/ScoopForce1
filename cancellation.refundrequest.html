@@ -24,7 +24,7 @@
         nav {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
+            flex-wrap: wrap;
             background-color: #444;
         }
 
@@ -41,7 +41,7 @@
 
         .main-container {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
+            flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
             padding: 2rem 1rem;
@@ -49,14 +49,14 @@
 
         .logo {
             width: 100%;
-            max-width: 300px; /* Scale logo for mobile screens */
+            max-width: 300px;
             height: auto;
-            margin: 1rem auto; /* Center the logo */
+            margin: 1rem auto;
         }
 
         .form-container {
-            width: 100%; /* Full width for mobile */
-            max-width: 800px; /* Limit width for larger screens */
+            width: 100%;
+            max-width: 800px;
             background-color: #fff;
             padding: 1.5rem;
             border-radius: 8px;
@@ -79,7 +79,7 @@
             font-weight: bold;
         }
 
-        input, textarea, select {
+        input, textarea {
             margin-bottom: 1rem;
             padding: 0.8rem;
             border: 1px solid #ccc;
@@ -102,8 +102,8 @@
         }
 
         .sidebar {
-            width: 100%; /* Full width for small screens */
-            max-width: 300px; /* Limit width for larger screens */
+            width: 100%;
+            max-width: 300px;
             margin: 1rem auto;
             background-color: #fff;
             padding: 1.5rem;
@@ -115,7 +115,7 @@
             display: block;
             margin: 0 auto 1rem;
             width: 100%;
-            max-width: 200px; /* Scale image for mobile */
+            max-width: 200px;
         }
 
         .sidebar h3 {
@@ -137,8 +137,8 @@
             background-color: #f1f1f1;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
-            gap: 10px; /* Space between links */
+            flex-wrap: wrap;
+            gap: 10px;
             margin: 0;
             width: 100%;
         }
@@ -146,35 +146,30 @@
         .bottom-links a {
             text-decoration: none;
             color: #333;
-            font-size: 0.9rem; /* Adjust font size for mobile */
+            font-size: 0.9rem;
         }
 
         .bottom-links a:hover {
             text-decoration: underline;
         }
 
-        /* Responsive Styles for Mobile Devices */
         @media (max-width: 768px) {
             .main-container {
-                flex-direction: column; /* Stack elements vertically */
+                flex-direction: column;
             }
 
             .form-container {
                 width: 100%;
-                padding: 1rem; /* Adjust padding for smaller screens */
-            }
-
-            .sidebar {
-                margin-top: 0;
+                padding: 1rem;
             }
 
             nav a {
                 padding: 0.5rem;
-                font-size: 0.9rem; /* Smaller font size for mobile */
+                font-size: 0.9rem;
             }
 
             .footer {
-                font-size: 0.8rem; /* Smaller footer text */
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -196,30 +191,29 @@
 
     <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-     <form action="mailto:scoopforcecleaners@gmail.com" method="post" enctype="text/plain">
         <div class="form-container">
             <h2>Submit a Refund or Cancellation Request</h2>
-            <form action="mailto:scoopforcecleaners@gmail.com" method="post" enctype="text/plain">
+            <form onsubmit="return sendEmail()">
                 <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <input type="text" id="name" name="fullName" placeholder="Enter your full name" required>
 
                 <label for="address">Full Address:</label>
                 <input type="text" id="address" name="address" placeholder="Enter your full address" required>
-                
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="Email Address" required>
 
-                 <label for="phone">Phone Number:</label>
-                 <input type="tel" id="phone" name="Phone Number" required>
-                
-                <label for="appointment">Date & Time of Original Appointment (PLEASE INCLLUDE DATE AND TIME):</label>
-                <input type="text" id="appointment" name="appointment" required>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phoneNumber" placeholder="Enter your phone number" required>
+
+                <label for="appointment">Date & Time of Original Appointment:</label>
+                <input type="datetime-local" id="appointment" name="appointment" required>
 
                 <label for="reason">Reason for Cancellation/Alteration:</label>
                 <textarea id="reason" name="reason" placeholder="Explain why you are cancelling or altering the appointment" required></textarea>
 
-                <label for="reschedule">If Rescheduling, Preferred New Date & Time:*PLEASE NOTE ONLY SATURDAYS AND SUNDAYS ARE AVAILABLE FROM 10AM-6PM*</label>
-                <input type="text" id="reschedule" name="reschedule">
+                <label for="reschedule">If Rescheduling, Preferred New Date & Time:</label>
+                <input type="text" id="reschedule" name="reschedule" placeholder="Only Saturdays & Sundays, 10 AM - 6 PM">
 
                 <button type="submit">Submit Request</button>
             </form>
@@ -248,5 +242,31 @@
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
+
+    <script>
+        function sendEmail() {
+            const name = document.getElementById("name").value;
+            const address = document.getElementById("address").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const appointment = document.getElementById("appointment").value;
+            const reason = document.getElementById("reason").value;
+            const reschedule = document.getElementById("reschedule").value;
+
+            const subject = "New Appointment Request";
+            const body = `
+                Full Name: ${name}
+                Address: ${address}
+                Email: ${email}
+                Phone: ${phone}
+                Original Appointment: ${appointment}
+                Reason: ${reason}
+                Reschedule: ${reschedule || "N/A"}
+            `;
+
+            window.location.href = `mailto:scoopforcecleaners@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            return false; // Prevent form submission to refresh the page
+        }
+    </script>
 </body>
 </html>
