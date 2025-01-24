@@ -174,7 +174,7 @@
     <div class="main-container">
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
 
-        <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbxAGCeo7lSu9nhFD2Vl72eA6fEfvqYG946AsYLoAd2HBUtuPwdRcVKQlE8TR5HJOIJ2Xw/exec"> 
+        <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbzZSfikeU815z71wOJ1ubgS781JRbtvjie1kA5jMaXlB0Bb_4l3a-zWZ9tMF2V5ZjvE0A/exec"> 
             <h1>Welcome to the Scoop Force Family!</h1>
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
             
@@ -220,7 +220,7 @@
         </select>
 
         <label for="pictures">Add Up to 3 Pictures of Your Yard:</label>
-        <input type="file" id="pictures" name="Yard Pictures" class="file-upload" multiple accept="image/*">
+        <input type="file" id="pictures" name="Yard Pictures[]" class="file-upload" multiple accept="image/*">
 
         <label for="number-of-dogs">Number of Dogs:</label>
         <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
@@ -292,7 +292,7 @@
         <a href="contactus.html">Contact Us</a>
     </div>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxAGCeo7lSu9nhFD2Vl72eA6fEfvqYG946AsYLoAd2HBUtuPwdRcVKQlE8TR5HJOIJ2Xw/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzZSfikeU815z71wOJ1ubgS781JRbtvjie1kA5jMaXlB0Bb_4l3a-zWZ9tMF2V5ZjvE0A/exec';
         const form = document.getElementById('signup-form');
 
         form.addEventListener('submit', e => {
