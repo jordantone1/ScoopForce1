@@ -238,7 +238,18 @@
         <a href="signupform.html">Sign Up Here</a>
         <a href="contactus.html">Contact Us</a>
     </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz9M2dlvCks0VZRFBYHqR5PF9tMBHLWysXxN9aIGZ5szyN--sO0jTqzi7VT_fHdf6eu/exec';
+        const form = document.getElementById('signup-form');
 
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => alert('Form submitted successfully!'))
+                .catch(error => alert('Error submitting the form.'));
+        });
+    </script>
     <div class="footer">
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
