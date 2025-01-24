@@ -314,13 +314,24 @@
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbzZSfikeU815z71wOJ1ubgS781JRbtvjie1kA5jMaXlB0Bb_4l3a-zWZ9tMF2V5ZjvE0A/exec';
         const form = document.getElementById('signup-form');
-
+        const submitButton = form.querySelector('button[type="submit"]'); // Reference the submit button
+        
         form.addEventListener('submit', e => {
             e.preventDefault();
+            submitButton.disabled = true; // Disable the button to prevent multiple submissions
             const formData = new FormData(form);
+            
             fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => alert('Form submitted successfully!'))
-                .catch(error => alert('Error submitting the form.'));
+                .then((response => {
+                    alert('Form submitted successfully!'))
+                    form.reset();
+                    submitButton.disabled = false; // Re-enable the button
+                })
+                .catch((error => {
+                    alert('Error submitting the form. Please try Again.');
+                    console.error('Error', error);
+                    submitButton.disabled = false; // Re-enable the button if there's an error
+            });
         });
     </script>
     <div class="footer">
