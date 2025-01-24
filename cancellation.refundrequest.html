@@ -193,7 +193,7 @@
         <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
         <div class="form-container">
             <h2>Submit a Refund or Cancellation Request</h2>
-            <form onsubmit="return sendEmail()">
+            <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbz9M2dlvCks0VZRFBYHqR5PF9tMBHLWysXxN9aIGZ5szyN--sO0jTqzi7VT_fHdf6eu/exec">
                 <label for="name">Full Name:</label>
                 <input type="text" id="name" name="fullName" placeholder="Enter your full name" required>
 
@@ -243,30 +243,5 @@
         <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
     </div>
 
-    <script>
-        function sendEmail() {
-            const name = document.getElementById("name").value;
-            const address = document.getElementById("address").value;
-            const email = document.getElementById("email").value;
-            const phone = document.getElementById("phone").value;
-            const appointment = document.getElementById("appointment").value;
-            const reason = document.getElementById("reason").value;
-            const reschedule = document.getElementById("reschedule").value;
-
-            const subject = "New Appointment Request";
-            const body = `
-                Full Name: ${name}
-                Address: ${address}
-                Email: ${email}
-                Phone: ${phone}
-                Original Appointment: ${appointment}
-                Reason: ${reason}
-                Reschedule: ${reschedule || "N/A"}
-            `;
-
-            window.location.href = `mailto:scoopforcecleaners@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            return false; // Prevent form submission to refresh the page
-        }
-    </script>
 </body>
 </html>
