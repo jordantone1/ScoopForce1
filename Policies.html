@@ -1,280 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scoop Force - Policies</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #F8F9FA;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scoop Force - Policies</title>
+  <style>
+    /* Global Styles */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #F0EAD6; /* Eggshell colored */
+    }
 
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-        }
+    /* Header with Banner */
+    header {
+      background-color: grey;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      position: relative;
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            background-color: #444;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            padding: 1rem;
-            font-size: 1rem;
-        }
+    /* Top Navigation Tabs */
+    nav.top-nav {
+      margin-top: 15px;
+    }
 
-        nav a:hover {
-            background-color: #555;
-        }
+    nav.top-nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-        .main-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem;
-        }
+    nav.top-nav ul li {
+      margin: 0 10px;
+    }
 
-        .logo {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            margin: 1rem auto;
-        }
+    nav.top-nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 8px 12px;
+      background-color: #555;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
 
-        .content {
-            width: 100%;
-            max-width: 800px;
-            padding: 1rem;
-            margin: 1rem auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
+    nav.top-nav ul li a:hover {
+      background-color: #333;
+    }
 
-        .collapsible {
-            background-color: #333;
-            color: white;
-            cursor: pointer;
-            padding: 1rem;
-            text-align: left;
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 5px;
-        }
+    /* Fixed Logo Images on Left and Right */
+    .fixed-logo {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 300px; /* Approximately 600px wide */
+      height: auto;
+      background-color: #F0EAD6;
+      padding: 5px;
+      border-radius: 4px;
+    }
 
-        .collapsible:hover {
-            background-color: #555;
-        }
+    .logo-left {
+      left: 10px;
+    }
 
-        .content-box {
-            padding: 1rem;
-            display: none;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 1rem;
-        }
+    .logo-right {
+      right: 10px;
+    }
 
-        .content-box.expanded {
-            display: block;
-        }
+    /* Main Content Area */
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F0EAD6;
+      box-sizing: border-box;
+    }
 
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: #fff;
-            margin-top: 2rem;
-        }
+    /* Collapsible Sections for Policies */
+    .collapsible {
+      background-color: #333;
+      color: white;
+      cursor: pointer;
+      padding: 1rem;
+      text-align: left;
+      border: none;
+      outline: none;
+      width: 100%;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+    }
 
-        .bottom-links {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #f1f1f1;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 0;
-            width: 100%;
-        }
+    .collapsible:hover {
+      background-color: #555;
+    }
 
-        .bottom-links a {
-            text-decoration: none;
-            color: #333;
-            font-size: 0.9rem;
-        }
+    .content-box {
+      padding: 1rem;
+      display: none;
+      background-color: #F0EAD6;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+    }
 
-        .bottom-links a:hover {
-            text-decoration: underline;
-        }
+    .content-box.expanded {
+      display: block;
+    }
 
-        /* Responsive Styles for Mobile Devices */
-        @media (max-width: 768px) {
-            nav a {
-                padding: 0.5rem;
-                font-size: 0.9rem;
-            }
+    /* Footer with Bottom Tabs */
+    footer {
+      background-color: #F0EAD6;
+      text-align: center;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+    }
 
-            .logo {
-                max-width: 200px;
-            }
+    footer .footer-nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
 
-            .content {
-                padding: 1rem;
-                max-width: 100%;
-                margin: 0;
-            }
+    footer .footer-nav ul li {
+      margin: 0 10px;
+    }
 
-            .collapsible {
-                font-size: 0.9rem;
-            }
+    footer .footer-nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      padding: 6px 10px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-            .footer {
-                font-size: 0.8rem;
-            }
-        }
-    </style>
+    footer .footer-nav ul li a:hover {
+      background-color: #333;
+      color: white;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+      .fixed-logo {
+        display: none;
+      }
+      nav.top-nav ul,
+      footer .footer-nav ul {
+        flex-direction: column;
+      }
+      nav.top-nav ul li,
+      footer .footer-nav ul li {
+        margin: 5px 0;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Scoop Force Policies</h1>
-    </header>
+  <!-- Fixed Logos on Left and Right -->
+  <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-left" />
+  <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-right" />
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Policies.html">Policies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signupform.html">Sign Up Page</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
-        <a href="whatwedo.services.html">What We Do/Services Page</a>
-    </nav>
+  <!-- Header and Top Navigation -->
+  <header>
+    <h1>Scoop Force Policies</h1>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Policies.html">Policies</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="signupform.html">Sign Up Page</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a></li>
+        <li><a href="whatwedo.services.html">What We Do/Services Page</a></li>
+      </ul>
+  </header>
 
-    <div class="main-container">
-        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-        <div class="content">
-            <!-- Collapsible sections for policies -->
-            <button class="collapsible">Refund/Cancellation Policy & Rescheduling</button>
-            <div class="content-box">
-                <h3>Satisfaction Guarantee</h3>
-                <p>At Scoop Force, we pride ourselves on delivering top-quality service. If you’re not satisfied with a cleaning, let us know within 24 hours, and we’ll return to fix the issue at no additional cost.</p>
-                <h3>Refund Eligibility</h3>
-            <ul>
-                <li><strong>One-Time Cleanings:</strong>
-                    <ul>
-                        <li>48hrs notice: Full refund</li>
-                        <li>24hrs notice: 50% refund</li>
-                        <li>Less than 24hrs: No refund, $10 rescheduling fee applies.</li>
-                    </ul>
-                </li>
-                <li><strong>Recurring Subscriptions:</strong> Prepaid services are non-refundable but will be honored through the remainder of the billing period.</li>
-                <li><strong>Overpayment or Billing Errors:</strong> Refunds will be issued promptly for any errors.</li>
-            </ul>
-
-            <h3>How to Cancel or Request a Refund</h3>
-            <p>Email us at <strong>ScoopForceCleaners@gmail.com</strong> with the following details:
-                <ul>
-                    <li>Your name</li>
-                    <li>Service address</li>
-                    <li>Scheduled service date that is being cancelled/rescheduled and the new reschedule date if you are rescheduling</li>
-                    <li>Reason for cancellation or refund request</li>
-                    <li>Or (<a href="cancellation.refundrequest.html">Click here and fill out the form.</a>)</li>
-                </ul>
-            </p>
-
-            <h3>Exceptions</h3>
-            <p>Severe weather may result in rescheduling rather than cancellation. There are no additional fees for weather-related rescheduling.</p>
-            </div>
-
-            <button class="collapsible">Overgrown Yard Fee Policy</button>
-            <div class="content-box">
-                <h3>Why We Charge an Overgrown Yard Fee</h3>
-                <p>An overgrown yard takes significantly more time to clean due to tall grass, dense weeds, or debris, which makes navigation and waste removal more challenging.</p>
-                <h3>Fee Structure</h3>
-            <ul>
-                <li><strong>Mild Overgrowth:</strong> Grass 6–12 inches, minimal weeds. Fee: $15 per visit.</li>
-                <li><strong>Moderate Overgrowth:</strong> Grass 12–18 inches, moderate weeds, or slight debris. Fee: $25 per visit.</li>
-                <li><strong>Severe Overgrowth:</strong> Grass over 18 inches, dense weeds, or significant debris. Fee: $40–$60 per visit.</li>
-            </ul>
-
-            <h3>Assessment</h3>
-            <p>We will assess your yard’s condition during the first visit and provide a clear explanation and fee estimate before beginning work.</p>
-            </div>
-
-            <button class="collapsible">Referral Policy</button>
-            <div class="content-box">
-                <h3>Thank You for Helping Scoop Force Grow!</h3>
-                <p>We reward our customers for spreading the word about Scoop Force. Here's how:</p>
-                <h3>How It Works</h3>
-            <ul>
-                <li><strong>Refer a Friend:</strong> Your referral gets $10 off their first initial cleaning with a subscription *$40 for their initial cleanup*, or $15 off a one-time cleaning *$65 for their cleanup*.</li>
-                <li><strong>Earn Rewards:</strong> You get $10 credit for every referral. Credits can be stacked for free months of service.</li>
-            </ul>
-
-            <h3>Rules & Details</h3>
-            <ul>
-                <li>Referral is complete once service is provided and payment is confirmed.</li>
-                <li>Referrals must mention your name during sign-up.</li>
-                <li>Credits apply only to active customers and are non-transferable.</li>
-            </ul>
-            </div>
-
-            <button class="collapsible">Pet Safety Policy</button>
-            <div class="content-box">
-                <h3>Keeping Your Pets Safe</h3>
-                <p>At Scoop Force, we prioritize the safety and well-being of your pets during every visit.</p>
-                <h3>Policy Details</h3>
-            <ul>
-                <li><strong>Securing Pets:</strong> Pets must be secured indoors or in a designated area during service to ensure safety.</li>
-                <li><strong>Notification of Behavior:</strong> Inform us of any territorial or aggressive behavior when scheduling service.</li>
-                <li><strong>Fences and Gates:</strong> Ensure all gates and fences are secure to prevent accidental escapes.</li>
-                <li><strong>Unforeseen Circumstances:</strong> If a pet is unsecured or aggressive, we may reschedule the service.</li>
-            </ul>
-            </div>
-        </div>
-    </div>
- 
-    <div class="bottom-links">
-        <a href="Policies.html">Policies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signupform.html">Sign Up Here</a>
-        <a href="contactus.html">Contact Us</a>
+  <!-- Main Content Area -->
+  <main>
+    <!-- Refund/Cancellation Policy Section -->
+    <button class="collapsible">Refund/Cancellation Policy &amp; Rescheduling</button>
+    <div class="content-box">
+      <h3>Satisfaction Guarantee</h3>
+      <p>
+        At Scoop Force, we pride ourselves on delivering top-quality service. If you’re not satisfied with a cleaning, let us know within 24 hours, and we’ll return to fix the issue at no additional cost.
+      </p>
+      <h3>Refund Eligibility</h3>
+      <ul>
+        <li><strong>One-Time Cleanings:</strong>
+          <ul>
+            <li>48hrs notice: Full refund</li>
+            <li>24hrs notice: 50% refund</li>
+            <li>Less than 24hrs: No refund, $10 rescheduling fee applies.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Recurring Subscriptions:</strong> Prepaid services are non-refundable but will be honored through the remainder of the billing period.
+        </li>
+        <li>
+          <strong>Overpayment or Billing Errors:</strong> Refunds will be issued promptly for any errors.
+        </li>
+      </ul>
+      <h3>How to Cancel or Request a Refund</h3>
+      <p>
+        Email us at <strong>ScoopForceCleaners@gmail.com</strong> with the following details:
+      </p>
+      <ul>
+        <li>Your name</li>
+        <li>Service address</li>
+        <li>Scheduled service date being cancelled/rescheduled and the new reschedule date if applicable</li>
+        <li>Reason for cancellation or refund request</li>
+        <li>
+          Or (<a href="cancellation.refundrequest.html">click here and fill out the form</a>)
+        </li>
+      </ul>
+      <h3>Exceptions</h3>
+      <p>
+        Severe weather may result in rescheduling rather than cancellation. There are no additional fees for weather-related rescheduling.
+      </p>
     </div>
 
-    <div class="footer">
-        <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
+    <!-- Overgrown Yard Fee Policy Section -->
+    <button class="collapsible">Overgrown Yard Fee Policy</button>
+    <div class="content-box">
+      <h3>Why We Charge an Overgrown Yard Fee</h3>
+      <p>
+        An overgrown yard takes significantly more time to clean due to tall grass, dense weeds, or debris, which makes navigation and waste removal more challenging.
+      </p>
+      <h3>Fee Structure</h3>
+      <ul>
+        <li>
+          <strong>Mild Overgrowth:</strong> Grass 6–12 inches, minimal weeds. Fee: $15 per visit.
+        </li>
+        <li>
+          <strong>Moderate Overgrowth:</strong> Grass 12–18 inches, moderate weeds, or slight debris. Fee: $25 per visit.
+        </li>
+        <li>
+          <strong>Severe Overgrowth:</strong> Grass over 18 inches, dense weeds, or significant debris. Fee: $40–$60 per visit.
+        </li>
+      </ul>
+      <h3>Assessment</h3>
+      <p>
+        We will assess your yard’s condition during the first visit and provide a clear explanation and fee estimate before beginning work.
+      </p>
     </div>
 
-    <script>
-        const collapsibles = document.querySelectorAll('.collapsible');
+    <!-- Referral Policy Section -->
+    <button class="collapsible">Referral Policy</button>
+    <div class="content-box">
+      <h3>Thank You for Helping Scoop Force Grow!</h3>
+      <p>
+        We reward our customers for spreading the word about Scoop Force. Here's how:
+      </p>
+      <h3>How It Works</h3>
+      <ul>
+        <li>
+          <strong>Refer a Friend:</strong> Your referral gets $10 off their first initial cleaning with a subscription (*$40 for their initial cleanup*), or $15 off a one-time cleaning (*$65 for their cleanup*).
+        </li>
+        <li>
+          <strong>Earn Rewards:</strong> You get $10 credit for every referral. Credits can be stacked for free months of service.
+        </li>
+      </ul>
+      <h3>Rules &amp; Details</h3>
+      <ul>
+        <li>Referral is complete once service is provided and payment is confirmed.</li>
+        <li>Referrals must mention your name during sign-up.</li>
+        <li>Credits apply only to active customers and are non-transferable.</li>
+      </ul>
+    </div>
 
-        collapsibles.forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                if (content.classList.contains('expanded')) {
-                    content.classList.remove('expanded');
-                } else {
-                    content.classList.add('expanded');
-                }
-            });
-        });
-    </script>
+    <!-- Pet Safety Policy Section -->
+    <button class="collapsible">Pet Safety Policy</button>
+    <div class="content-box">
+      <h3>Keeping Your Pets Safe</h3>
+      <p>
+        At Scoop Force, we prioritize the safety and well-being of your pets during every visit.
+      </p>
+      <h3>Policy Details</h3>
+      <ul>
+        <li>
+          <strong>Securing Pets:</strong> Pets must be secured indoors or in a designated area during service to ensure safety.
+        </li>
+        <li>
+          <strong>Notification of Behavior:</strong> Inform us of any territorial or aggressive behavior when scheduling service.
+        </li>
+        <li>
+          <strong>Fences and Gates:</strong> Ensure all gates and fences are secure to prevent accidental escapes.
+        </li>
+        <li>
+          <strong>Unforeseen Circumstances:</strong> If a pet is unsecured or aggressive, we may reschedule the service.
+        </li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer with Bottom Tabs -->
+  <footer>
+    <div class="footer-nav">
+      <ul>
+        <li><a href="Policies.html">Policies</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+        <li><a href="signupform.html">Sign up Today</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const collapsibles = document.querySelectorAll('.collapsible');
+    collapsibles.forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        content.classList.toggle('expanded');
+      });
+    });
+  </script>
 </body>
 </html>
      
