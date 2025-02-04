@@ -5,55 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoop Force - Sign Up</title>
     <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* Global Styles */
+        body, html {
             margin: 0;
             padding: 0;
-            background-color: #F8F9FA;
+            font-family: Arial, sans-serif;
+            background-color: #F0EAD6; /* Eggshell colored */
             color: #333;
         }
-
+        
+        /* Header with Banner */
         header {
-            background-color: #333;
-            color: #fff;
+            background-color: grey;
+            color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 20px 10px;
         }
-
-        nav {
+        
+        /* Top Navigation Tabs */
+        nav.top-nav {
+            margin-top: 15px;
+        }
+        
+        nav.top-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
-            background-color: #444;
+            flex-wrap: wrap;
         }
-
-        nav a {
-            color: #fff;
+        
+        nav.top-nav ul li {
+            margin: 0 10px;
+        }
+        
+        nav.top-nav ul li a {
             text-decoration: none;
-            padding: 0.5rem 1rem;
-            font-size: 0.9rem; /* Smaller font size for mobile */
-        }
-
-        nav a:hover {
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
             background-color: #555;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
-
+        
+        nav.top-nav ul li a:hover {
+            background-color: #333;
+        }
+        
+        /* Fixed Logo Images on Left and Right */
+        .fixed-logo {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 300px; /* Updated to 300px */
+            height: auto;
+            background-color: #F0EAD6;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .logo-left {
+            left: 10px;
+        }
+        
+        .logo-right {
+            right: 10px;
+        }
+        
+        /* Main Content Area */
         .main-container {
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
+            flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
             padding: 1rem;
+            margin-top: 20px;
         }
-
-        .logo {
-            width: 100%;
-            max-width: 300px; /* Scale logo for mobile */
-            height: auto;
-            margin: 1rem auto;
-        }
-
+        
+        /* Form Styles */
         form {
             width: 100%;
             max-width: 600px; /* Limit width for larger screens */
@@ -63,18 +94,18 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
+        
         form h1 {
             text-align: center;
             margin-bottom: 1rem;
         }
-
+        
         label {
             display: block;
             margin: 0.5rem 0;
             font-weight: bold;
         }
-
+        
         input, select, textarea {
             width: 100%;
             padding: 0.75rem;
@@ -83,16 +114,16 @@
             border-radius: 5px;
             font-size: 1rem;
         }
-
+        
         textarea {
             resize: vertical;
             height: 100px;
         }
-
+        
         .button-container {
             text-align: center;
         }
-
+        
         button {
             padding: 0.75rem 2rem;
             font-size: 1rem;
@@ -102,11 +133,33 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
+        
         button:hover {
             background-color: #555;
         }
-
+        
+        /* Bottom Links */
+        .bottom-links {
+            text-align: center;
+            padding: 1rem 0;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .bottom-links a {
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .bottom-links a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
         .footer {
             text-align: center;
             padding: 1rem;
@@ -114,204 +167,192 @@
             color: #fff;
             margin-top: 2rem;
         }
-
-        .bottom-links {
-            text-align: center;
-            padding: 1rem 0;
-            background-color: #f1f1f1;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
-            gap: 10px;
-        }
-
-        .bottom-links a {
-            color: #333;
-            text-decoration: none;
-            font-size: 0.9rem; /* Adjust font size for mobile */
-        }
-
-        .bottom-links a:hover {
-            text-decoration: underline;
-        }
-
+        
         /* Responsive Styles for Mobile Devices */
         @media (max-width: 768px) {
-            nav a {
+            nav.top-nav ul li a {
                 padding: 0.5rem;
                 font-size: 0.8rem;
             }
-
+            
             .footer {
                 font-size: 0.8rem;
             }
-
+            
             form {
-                padding: 1rem; /* Reduce padding for smaller screens */
+                padding: 1rem;
             }
-
+            
             button {
-                font-size: 0.9rem; /* Adjust button size for smaller screens */
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Fixed Logos on Left and Right -->
+    <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-left">
+    <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-right">
+    
     <header>
         <h1>Sign Up for Scoop Force Services.</h1>
     </header>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="Policies.html">Policies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signupform.html">Sign Up Page</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
-        <a href="whatwedo.services.html">What We Do/Services Page</a>
+    
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="Policies.html">Policies</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="signupform.html">Sign Up Page</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+            <li><a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a></li>
+            <li><a href="whatwedo.services.html">What We Do/Services Page</a></li>
+        </ul>
     </nav>
-
+    
     <div class="main-container">
-        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
-
+        
         <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbxZOQuaiuGxuScCfUhOEBaGyvt4fcNM2wYedDyHTdm_7bymrOB9NlfNmg5J2mbNBsTU9A/exec"> 
             <h1>Welcome to the Scoop Force Family! <strong style="color: red;">***Once SUBMIT is pressed you will be redirected to a "Success" window. We will reach out to you soon.***</strong></h1>
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
             
             <!-- Contact Information -->
-        <label for="full-name">Full Name:</label>
-        <input type="text" id="full-name" name="Full Name" required>
-
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="Email Address" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="Phone Number" required>
-
-        <label for="contact-preference">Preference (Email or Phone Call):</label>
-        <input type="text" id="contact-preference" name="Contact Preference" required>
-
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="Address" required>
-
-        <label for="city">City:</label>
-        <input type="text" id="city" name="City" required>
-
-        <label for="state">State:</label>
-        <input type="text" id="state" name="State" required>
-
-        <label for="zip">ZIP Code:</label>
-        <input type="text" id="zip" name="ZIP Code" required>
-
-        <!-- Service Options -->
-        <label for="service-type">Service Type:</label>
-        <select id="service-type" name="Service Type">
-            <option value="One Time">One Time</option>
-            <option value="Recurring 1 Week">Recurring 1 Week</option>
-            <option value="Recurring 2 Weeks">Recurring 2 Weeks</option>
-        </select>
-
-        <label for="yard-condition">Yard Condition *Please see pricing page for references*:</label>
-        <select id="yard-condition" name="Yard Condition">
-            <option value="Good Condition">Good Condition</option>
-            <option value="Mildly Overgrown">Mildly Overgrown</option>
-            <option value="Moderately Overgrown">Moderately Overgrown</option>
-            <option value="Severely Overgrown">Severely Overgrown</option>
-        </select>
-
-        <label for="number-of-dogs">Number of Dogs:</label>
-        <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
-        
-<!-- Dog Weights Section -->
-<label>Weight of Each Dog (up to 6):</label>
-<table>
-    <tr>
-        <th>Dog #</th>
-        <th>Weight (lbs)</th>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td><input type="number" name="Dog Weight 1" min="1" max="200" placeholder="e.g., 25" required></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td><input type="number" name="Dog Weight 2" min="1" max="200" placeholder="e.g., 30"></td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td><input type="number" name="Dog Weight 3" min="1" max="200" placeholder="e.g., 15"></td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td><input type="number" name="Dog Weight 4" min="1" max="200" placeholder="e.g., 40"></td>
-    </tr>
-    <tr>
-        <td>5</td>
-        <td><input type="number" name="Dog Weight 5" min="1" max="200" placeholder="e.g., 50"></td>
-    </tr>
-    <tr>
-        <td>6</td>
-        <td><input type="number" name="Dog Weight 6" min="1" max="200" placeholder="e.g., 20"></td>
-    </tr>
-</table>
-        <!-- Preferred Service Start Date  -->
-        <label for="service-date">Preferred Service Start Date *Note - Only Saturdays and Sundays are currently available. 10AM-6PM availability.* :</label>
-<input type="datetime-local" id="service-date" name="Preferred Service Start Date" required>
-
-        <!-- Referral Program -->
-        <label for="referral">Were You Referred By Someone? If yes, please list them below.</label>
-        <input type="text" id="referral" name="Referral Name">
-
-        <label for="referral-address">Referral's Address (if known):</label>
-        <input type="text" id="referral-address" name="Referral Address">
-
-        <!-- Payment Info -->
-        <label for="payment-method">Preferred Payment Method:</label>
-        <select id="payment-method" name="Payment Method">
-            <option value="Zelle">Zelle</option>
-            <option value="Cashapp">Cashapp</option>
-            <option value="Stripe">Stripe</option>
-            <option value="Venmo">Venmo</option>
-        </select>
-
-        <div class="button-container">
-            <button type="submit">Submit Form</button>
+            <label for="full-name">Full Name:</label>
+            <input type="text" id="full-name" name="Full Name" required>
+    
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="Email Address" required>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="Phone Number" required>
+    
+            <label for="contact-preference">Preference (Email or Phone Call):</label>
+            <input type="text" id="contact-preference" name="Contact Preference" required>
+    
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="Address" required>
+    
+            <label for="city">City:</label>
+            <input type="text" id="city" name="City" required>
+    
+            <label for="state">State:</label>
+            <input type="text" id="state" name="State" required>
+    
+            <label for="zip">ZIP Code:</label>
+            <input type="text" id="zip" name="ZIP Code" required>
+    
+            <!-- Service Options -->
+            <label for="service-type">Service Type:</label>
+            <select id="service-type" name="Service Type">
+                <option value="One Time">One Time</option>
+                <option value="Recurring 1 Week">Recurring 1 Week</option>
+                <option value="Recurring 2 Weeks">Recurring 2 Weeks</option>
+            </select>
+    
+            <label for="yard-condition">Yard Condition *Please see pricing page for references*:</label>
+            <select id="yard-condition" name="Yard Condition">
+                <option value="Good Condition">Good Condition</option>
+                <option value="Mildly Overgrown">Mildly Overgrown</option>
+                <option value="Moderately Overgrown">Moderately Overgrown</option>
+                <option value="Severely Overgrown">Severely Overgrown</option>
+            </select>
+    
+            <label for="number-of-dogs">Number of Dogs:</label>
+            <input type="number" id="number-of-dogs" name="Number of Dogs" min="1" required>
+            
+            <!-- Dog Weights Section -->
+            <label>Weight of Each Dog (up to 6):</label>
+            <table>
+                <tr>
+                    <th>Dog #</th>
+                    <th>Weight (lbs)</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><input type="number" name="Dog Weight 1" min="1" max="200" placeholder="e.g., 25" required></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="number" name="Dog Weight 2" min="1" max="200" placeholder="e.g., 30"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="number" name="Dog Weight 3" min="1" max="200" placeholder="e.g., 15"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="number" name="Dog Weight 4" min="1" max="200" placeholder="e.g., 40"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="number" name="Dog Weight 5" min="1" max="200" placeholder="e.g., 50"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><input type="number" name="Dog Weight 6" min="1" max="200" placeholder="e.g., 20"></td>
+                </tr>
+            </table>
+            <!-- Preferred Service Start Date  -->
+            <label for="service-date">Preferred Service Start Date *Note - Only Saturdays and Sundays are currently available. 10AM-6PM availability.* :</label>
+            <input type="datetime-local" id="service-date" name="Preferred Service Start Date" required>
+    
+            <!-- Referral Program -->
+            <label for="referral">Were You Referred By Someone? If yes, please list them below.</label>
+            <input type="text" id="referral" name="Referral Name">
+    
+            <label for="referral-address">Referral's Address (if known):</label>
+            <input type="text" id="referral-address" name="Referral Address">
+    
+            <!-- Payment Info -->
+            <label for="payment-method">Preferred Payment Method:</label>
+            <select id="payment-method" name="Payment Method">
+                <option value="Zelle">Zelle</option>
+                <option value="Cashapp">Cashapp</option>
+                <option value="Stripe">Stripe</option>
+                <option value="Venmo">Venmo</option>
+            </select>
+    
+            <div class="button-container">
+                <button type="submit">Submit Form</button>
             </div>
         </form>
+        
 
-        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
     </div>
-
+    
     <div class="bottom-links">
         <a href="Policies.html">Policies</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="signupform.html">Sign Up Here</a>
         <a href="contactus.html">Contact Us</a>
+        <a href="signupform.html">Sign up Today</a>
     </div>
+    
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxZOQuaiuGxuScCfUhOEBaGyvt4fcNM2wYedDyHTdm_7bymrOB9NlfNmg5J2mbNBsTU9A/exec';
         const form = document.getElementById('signup-form');
-        const submitButton = form.querySelector('button[type="submit"]'); // Reference the submit button
+        const submitButton = form.querySelector('button[type="submit"]');
         
         form.addEventListener('submit', e => {
             e.preventDefault();
-            submitButton.disabled = true; // Disable the button to prevent multiple submissions
+            submitButton.disabled = true;
             const formData = new FormData(form);
             
             fetch(scriptURL, { method: 'POST', body: formData })
-                .then((response => {
-                    alert('Form submitted successfully!'))
+                .then(response => {
+                    alert('Form submitted successfully!');
                     form.reset();
-                    submitButton.disabled = false; // Re-enable the button
+                    submitButton.disabled = false;
                 })
-                .catch((error => {
+                .catch(error => {
                     alert('Error submitting the form. Please try Again.');
                     console.error('Error', error);
-                    submitButton.disabled = false; // Re-enable the button if there's an error
-            });
+                    submitButton.disabled = false;
+                });
         });
     </script>
+    
     <div class="footer">
-       
+        <p>&copy; 2025 Scoop Force. All Rights Reserved.</p>
+    </div>
 </body>
 </html>
+
