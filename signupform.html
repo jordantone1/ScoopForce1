@@ -59,7 +59,7 @@
             position: fixed;
             top: 50%;
             transform: translateY(-50%);
-            width: 300px; /* Updated to 300px */
+            width: 300px; /* 300px wide */
             height: auto;
             background-color: #F0EAD6;
             padding: 5px;
@@ -186,6 +186,11 @@
             button {
                 font-size: 0.9rem;
             }
+            
+            /* Hide fixed logos on mobile, matching behavior on other pages */
+            .fixed-logo {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -211,7 +216,6 @@
     </nav>
     
     <div class="main-container">
-        
         <form id="signup-form" method="POST" action="https://script.google.com/macros/s/AKfycbxZOQuaiuGxuScCfUhOEBaGyvt4fcNM2wYedDyHTdm_7bymrOB9NlfNmg5J2mbNBsTU9A/exec"> 
             <h1>Welcome to the Scoop Force Family! <strong style="color: red;">***Once SUBMIT is pressed you will be redirected to a "Success" window. We will reach out to you soon.***</strong></h1>
             <p>Fill out the form below or email your request to <strong>scoopforcecleaners@gmail.com</strong>.</p>
@@ -316,8 +320,6 @@
                 <button type="submit">Submit Form</button>
             </div>
         </form>
-        
-
     </div>
     
     <div class="bottom-links">
