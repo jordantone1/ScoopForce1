@@ -1,222 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Scoop Force</title>
-  <style>
-    /* Global Styles */
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #F0EAD6; /* Eggshell background color */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Scoop Force</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F8F9FA; /* Egg white color */
+            color: #333;
+        }
 
-    /* Header Section with Banner */
-    header {
-      background-color: grey;
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      position: relative;
-    }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
 
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
 
-    /* Top Navigation Tabs */
-    nav.top-nav {
-      margin-top: 15px;
-    }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+            font-size: 1rem;
+        }
 
-    nav.top-nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+        nav a:hover {
+            background-color: #555;
+        }
 
-    nav.top-nav ul li {
-      margin: 0 10px;
-    }
 
-    nav.top-nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 8px 12px;
-      background-color: #555;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem;
+        }
 
-    nav.top-nav ul li a:hover {
-      background-color: #333;
-    }
+        .logo {
+            width: 600px;
+            height: auto;
+            margin: 0 20px;
+        }
 
-    /* Main Content Area */
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #F0EAD6; /* Eggshell background */
-      box-sizing: border-box;
-    }
+        .content {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    main h2,
-    main h3 {
-      text-align: center;
-    }
+        h1, h2, p {
+            margin: 1rem 0;
+        }
 
-    main p, main li, main ol {
-      line-height: 1.6;
-      margin-bottom: 15px;
-    }
+        a.button-link {
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 0.8rem 1.5rem;
+            color: #fff;
+            background-color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
 
-    main ul, main ol {
-      padding-left: 20px;
-    }
+        a.button-link:hover {
+            background-color: #555;
+        }
 
-    /* Footer with Clickable Tabs */
-    footer {
-      background-color: #F0EAD6;
-      text-align: center;
-      padding: 10px 0;
-      border-top: 1px solid #ccc;
-    }
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
 
-    footer .footer-nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+        .bottom-links {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    gap: 20px; /* Space between links */
+    margin: 0; /* Remove default margins */
+    width: 100%;
+}
 
-    footer .footer-nav ul li {
-      margin: 0 10px;
-    }
 
-    footer .footer-nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      padding: 6px 10px;
-      border: 1px solid #333;
-      border-radius: 4px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    footer .footer-nav ul li a:hover {
-      background-color: #333;
-      color: white;
-    }
-
-    /* Fixed Logo Images on Left and Right */
-    .fixed-logo {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 300px;
-      height: auto;
-      background-color: #F0EAD6; /* Eggshell background for the logo area */
-      padding: 5px;
-      border-radius: 4px;
-    }
-
-    .logo-left {
-      left: 10px;
-    }
-
-    .logo-right {
-      right: 10px;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 600px) {
-      /* Hide fixed logos on small screens to avoid clutter */
-      .fixed-logo {
-        display: none;
-      }
-      
-      nav.top-nav ul,
-      footer .footer-nav ul {
-        flex-direction: column;
-      }
-      
-      nav.top-nav ul li,
-      footer .footer-nav ul li {
-        margin: 5px 0;
-      }
-    }
-  </style>
+        .bottom-links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px; /* Controls spacing between links */
+    font-size: 1rem;
+}
+.bottom-links a:hover {
+    text-decoration: underline;
+}
+    </style>
 </head>
 <body>
-  <!-- Fixed Logos on Left and Right -->
-  <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-left">
-  <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="fixed-logo logo-right">
+    <header>
+        <h1>Contact Scoop Force</h1>
+    </header>
 
-  <!-- Header with Banner and Top Navigation -->
-  <header>
-    <h1>WELCOME TO SCOOP FORCE!</h1>
-    <nav class="top-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Policies.html">Policies</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="signupform.html">Sign Up Page</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a></li>
-        <li><a href="whatwedo.services.html">What We Do/Services Page</a></li>
-      </ul>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="policies.html">Policies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signupform.html">Sign Up Page</a>
+        <a href="contactus.html">Contact Us</a>
+        <a href="cancellation.refundrequest.html">Cancellation/Refund Request Page</a>
+        <a href="whatwedo.services.html">What We Do/Services Page</a>
     </nav>
-  </header>
+<div class="main-container">
+        <img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+    <div class="content">
+        <h2>We’d Love to Hear From You!</h2>
+        <p>If you have questions, need assistance, or would like to schedule your pet waste removal service, feel free to contact us.</p>
 
-  <!-- Main Content Section -->
-  <main>
-    <h2>Your Trusted Pet Waste Removal Experts</h2>
-    <p>At Scoop Force, we’re on a mission to keep your yard clean, fresh, and poop-free! Our professional pet waste removal services are designed to save you time and hassle so you can enjoy your outdoor space without worry. Whether you’re looking for a one-time cleanup or recurring visits, our team is here to do the dirty work for you.</p>
-    
-    <h3>Why Choose Scoop Force?</h3>
-    <ul>
-      <li><strong>Professional and Reliable Service:</strong> We pride ourselves on punctuality and thoroughness, leaving your yard spotless every time.</li>
-      <li><strong>Flexible Scheduling:</strong> Choose from one-time cleanups or recurring weekly and bi-weekly plans that fit your needs.</li>
-      <li><strong>Affordable Pricing:</strong> Transparent and competitive rates with no hidden fees.</li>
-      <li><strong>Eco-Friendly Practices:</strong> We use environmentally safe products and ensure proper waste disposal, keeping your yard and the planet clean.</li>
-      <li><strong>Satisfaction Guarantee:</strong> Not happy with your service? Let us know within 24 hours, and we’ll make it right at no extra cost.</li>
-    </ul>
-    
-    <h3>Our Services</h3>
-    <ul>
-      <li><strong>Pet Waste Removal:</strong> One-time and recurring cleanups.</li>
-      <li><strong>Overgrown Yard Cleanup:</strong> For those yards that need a little extra TLC (garbage removal from overgrown yards).</li>
-      <li><strong>Community Waste Solutions:</strong> Pet waste station installation and maintenance.</li>
-    </ul>
-    
-    <h3>How It Works</h3>
-    <ol>
-      <li><strong>Schedule Your Service:</strong> Choose the plan that works best for you.</li>
-      <li><strong>We Clean:</strong> Our team handles the dirty work, so you don’t have to.</li>
-      <li><strong>Enjoy Your Yard:</strong> Relax and enjoy a clean, fresh outdoor space.</li>
-    </ol>
-  </main>
+        <p><strong>Email:</strong> <a href="mailto:scoopforcecleaners@gmail.com">scoopforcecleaners@gmail.com</a></p>
+        <p><strong>Phone:</strong> Unlisted (email us for inquiries)</p>
 
-  <!-- Footer with Clickable Tabs -->
-  <footer>
-    <div class="footer-nav">
-      <ul>
-        <li><a href="Policies.html">Policies</a></li>
-        <li><a href="contactus.html">Contact Us</a></li>
-        <li><a href="signupform.html">Sign up Today</a></li>
-      </ul>
+        <h2>Helpful Links</h2>
+        <a href="signupform.html" class="button-link">Sign Up Form</a>
+        <a href="cancellation/refundrequest.html" class="button-link">Refund/Cancellation Form</a>
     </div>
-  </footer>
-</body>
-</html>
+<img src="https://i.ibb.co/qmTYZvH/Scoop-Force.png" alt="Scoop Force Logo" class="logo">
+    </div> 
+    <div class="bottom-links">
+        <a href="policies.html">Policies</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="signupform.html">Sign Up Here</a>
+        <a href="contactus.html">Contact Us</a>
+    </div>
 
